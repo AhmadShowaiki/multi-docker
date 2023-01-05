@@ -10,6 +10,7 @@ script:
 
 after_success:
   - docker build -t ahmoud2/multi-client ./client
+  
   - docker build -t ahmoud2/multi-nginx ./nginx
   - docker build -t ahmoud2/multi-server ./server
   - docker build -t ahmoud2/multi-worker ./worker

@@ -10,19 +10,11 @@ script:
 
 after_success:
   - docker build -t ahmoud2/multi-client ./client
-
   - docker build -t ahmoud2/multi-nginx ./nginx
-
   - docker build -t ahmoud2/multi-server ./server
-
   - docker build -t ahmoud2/multi-worker ./worker
-
   - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
-
   - docker push ahmoud2/multi-client
-
   - docker push ahmoud2/multi-nginx
-
   - docker push ahmoud2/multi-server
-  
   - docker push ahmoud2/multi-worker
